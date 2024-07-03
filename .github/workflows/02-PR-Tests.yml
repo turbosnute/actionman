@@ -17,4 +17,4 @@ jobs:
       - name: Perform a Pester test from the skript.Tests.ps1 file
         shell: pwsh
         run: |
-          ./run.Tests.ps1
+          ./run.Tests.ps1 >> $GITHUB_STEP_SUMMARY
