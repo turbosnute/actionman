@@ -7,6 +7,6 @@ foreach ($test in $pester_result.Tests) {
 
 }
 
-$test_table
+$test_table >> $GITHUB_STEP_SUMMARY
 
 if ($Error[0].Fullyqualifiederrorid -eq 'PesterAssertionFailed') {exit 1}  
