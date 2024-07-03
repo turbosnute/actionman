@@ -1,4 +1,4 @@
-name: Test PowerShell on Ubuntu
+name: PR Tests
 
 on: workflow_dispatch
 
@@ -9,7 +9,7 @@ on: workflow_dispatch
 
 jobs:
   pester-test:
-    name: Pester test
+    name: Pester tests
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -17,5 +17,4 @@ jobs:
       - name: Perform a Pester test from the skript.Tests.ps1 file
         shell: pwsh
         run: |
-          Invoke-Pester skript.Tests.ps1 -Passthru
-          if ($Error[0].Fullyqualifiederrorid -eq 'PesterAssertionFailed') {exit 1}   
+          ./run.Tests.ps1

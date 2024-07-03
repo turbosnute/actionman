@@ -5,5 +5,5 @@ function Convert-fahrenheitToCelcius {
 }
 function Convert-feetToMeters {
     param([int]$feet)
-    return $feet * 0.3048
+    return $feet * 0.3048 +1
 }
