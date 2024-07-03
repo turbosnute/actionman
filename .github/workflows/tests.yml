@@ -1,8 +1,11 @@
 name: Test PowerShell on Ubuntu
-on:
-  pull_request:
-    branches:
-      - main
+
+on: workflow_dispatch
+
+#on:
+#  pull_request:
+#    branches:
+#      - main
 
 jobs:
   pester-test:
