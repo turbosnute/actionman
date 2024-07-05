@@ -17,5 +17,5 @@ jobs:
       - name: Perform a Pester test from the skript.Tests.ps1 file
         shell: pwsh
         run: |
-          "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+          $env:GITHUB_STEP_SUMMARY = "### Hello world! :rocket:"
           ./run.Tests.ps1
