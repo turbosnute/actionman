@@ -17,5 +17,10 @@ jobs:
       - name: Perform a Pester test from the skript.Tests.ps1 file
         shell: pwsh
         run: |
-          $env:GITHUB_STEP_SUMMARY = "### Hello world! :rocket:"
-          ./run.Tests.ps1
+          $pester_result = Invoke-Pester skript.Tests.ps1 -Passthru
+          $test_table = "| Test | Result |`n| --- | --- |`n"
+          foreach ($test in $pester_result.Tests) {
+              $test_table += "| $($test.Name) | $($test.Result) |`n"
+
+          }
+          $test_table  >> $env:GITHUB_STEP_SUMMARY
