@@ -22,7 +22,7 @@ jobs:
           foreach ($test in $pester_result.Tests) {
               if ($test.Result -eq "Passed") {
                 $test_result = "🟢"
-              } else if ($test.Result -eq "Failed") {
+              } elseif ($test.Result -eq "Failed") {
                 $test_result = "🔴"
               } else {
                 $test_result = "🟡"
