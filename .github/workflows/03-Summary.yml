@@ -1,0 +1,16 @@
+name: Summary test
+
+on: workflow_dispatch
+
+jobs:
+  summary-test:
+    name: tests
+    runs-on: ntnu-runners
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - name: do tests
+        shell: pwsh
+        run: |
+          $env:GITHUB_STEP_SUMMARY = "### Hello world! :rocket:"
+          ls /etc/
