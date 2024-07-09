@@ -20,6 +20,14 @@ jobs:
           $pester_result = Invoke-Pester skript.Tests.ps1 -Passthru
           $test_table = "| Test | Result |`n| --- | --- |`n"
           foreach ($test in $pester_result.Tests) {
+              if ($test.Result -eq "Passed") {
+                $test_result = "🟢"
+              } else if ($test.Result -eq "Failed") {
+                $test_result = "🔴"
+              } else {
+                $test_result = "🟡"
+              }
+
               $test_table += "| $($test.Name) | $($test.Result) |`n"
 
           }
