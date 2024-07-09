@@ -13,4 +13,4 @@ jobs:
         shell: pwsh
         run: |
           $env:GITHUB_STEP_SUMMARY = "### Hello world! :rocket:"
-          ls /etc/
+          Add-Content -Path $env:GITHUB_STEP_SUMMARY -Value "- 🟢 Build successful"
