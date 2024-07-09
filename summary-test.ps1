@@ -1,0 +1,1 @@
+"dette er skrevet fra summary-tests.ps1" >> $env:GITHUB_STEP_SUMMARY

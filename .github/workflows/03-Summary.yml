@@ -13,3 +13,4 @@ jobs:
         shell: pwsh
         run: |
           "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
+          ./summary-tests.ps1
