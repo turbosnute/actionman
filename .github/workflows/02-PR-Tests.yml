@@ -28,7 +28,7 @@ jobs:
                 $test_result = "🟡"
               }
 
-              $test_table += "| $($test.Name) | $($test.Result) |`n"
+              $test_table += "| $($test.Name) | $test_result |`n"
 
           }
           $test_table  >> $env:GITHUB_STEP_SUMMARY
