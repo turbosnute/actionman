@@ -12,5 +12,4 @@ jobs:
       - name: do tests
         shell: pwsh
         run: |
-          $env:GITHUB_STEP_SUMMARY = "### Hello world! :rocket:"
-          $env:GITHUB_STEP_SUMMARY += "- 🟢 Build successful"
+          "### Hello world! :rocket:" >> $env:GITHUB_STEP_SUMMARY
